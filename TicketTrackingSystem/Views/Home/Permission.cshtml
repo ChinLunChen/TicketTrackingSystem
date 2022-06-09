@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="text-center">
+    <h1 class="display-4">選擇使用者</h1>
+
+    <form method="post" class="card p-3">
+        <div class="row">
+            <div asp-validation-summary="All"></div>
+        </div>
+        <div class="form-group mb-0 align-middle">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" asp-route-user="RD" style="display:inline">
+                <img src="https://truth.bahamut.com.tw/s01/202206/e18aefcc6f4577f54fd1202f8875c155.JPG" width="80" height="80" />
+            </a>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" asp-route-user="QA" style="display:inline">
+                <img src="https://truth.bahamut.com.tw/s01/202206/9c77b0a2c1ad80085c658f1f57ad128b.JPG" width="80" height="80" />
+            </a>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" asp-route-user="PM" style="display:inline">
+                <img src="https://truth.bahamut.com.tw/s01/202206/c521de892a4717c9b3b7eaf7b61ecf86.JPG" width="80" height="80" />
+            </a>
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" asp-route-user="Admin" style="display:inline">
+                <img src="https://truth.bahamut.com.tw/s01/202206/ee1d5dba46cd86667edd3c2e05ace6f1.JPG" width="80" height="80" />
+            </a>
+        </div>
+    </form>
+</div>

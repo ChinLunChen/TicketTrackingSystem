@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -20,10 +21,31 @@ namespace TicketTrackingSystem.Controllers
 
         public IActionResult Index()
         {
+            try
+            {
+                //0.controller 1.action 2.user
+                string sUser = Request.RouteValues.Values.ElementAt(2).ToString();
+                Response.Cookies.Append("User", sUser);
+            }
+            catch (Exception ex)
+            {
+
+            }
             return View();
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult Permission()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Index(string sUser)
         {
             return View();
         }
