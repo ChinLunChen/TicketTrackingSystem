@@ -1,8 +1,91 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model List<TicketTrackingSystem.Models.BugListViewModel>
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @*<h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        <h2>@ViewData["User"]</h2>*@
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Summary
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Type
+                </th>
+                <th>
+                    Priority
+                </th>
+                <th>
+                    Status
+                </th>
+                <th>
+                    CreateDate
+                </th>
+                @if (ViewData["User"].ToString() == "QA")
+                {
+                    <th>
+                        Edit
+                    </th>
+                    <th>
+                        Delete
+                    </th>
+                }
+                @if (ViewData["User"].ToString() == "RD")
+                {
+                    <th>
+                        狀態變更
+                    </th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Summary)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Priority)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreateDate)
+                    </td>
+
+                    @if (ViewData["User"].ToString() == "QA")
+                    {
+                        <td>
+                            <a asp-controller="Home" asp-action="Edit" asp-route-id="@item.ID">Edit</a>
+                        </td>
+                        <td>
+                            <a asp-controller="Home" asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                        </td>
+                    }
+                    @if (ViewData["User"].ToString() == "RD")
+                    {
+                        <td>
+                            <a asp-controller="Home" asp-action="Resolve" asp-route-id="@item.ID">Resolve</a>
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
