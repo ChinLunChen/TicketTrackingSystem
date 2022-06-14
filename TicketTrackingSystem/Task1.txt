@@ -1,0 +1,18 @@
+RD
+bug:resolve(phase I)
+Feature Request:read(phase II)
+Test Case:read(phase II)
+
+
+QA
+bug:create,edit,delete(phase I)
+Feature Request:read(phase II)
+Test Case:create,resolve(phase II)
+
+
+PM
+bug:read(phase II)
+Feature Request:create,resolve(phase II)
+Test Case:read(phase II)
+
+administrator: manage all the stuffs including adding new QA, RD and PM user.(phase II)

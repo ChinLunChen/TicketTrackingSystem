@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@using (Html.BeginForm("Create_FeatureRequest", "Home", FormMethod.Post))
+{
+    <div class="text-center">
+        <label for="Summary">Summary</label>
+        <input id="Summary" name="Summary" type="text" />
+        <br />
+        <label for="Description">Description</label>
+        <textarea id="Description" name="Description" cols="30" rows="5" style="vertical-align:top;"></textarea>
+        <br />
+        <label for="Type">Type</label>
+        <select id="Type" name="Type">
+            <option>Feature Request</option>
+        </select>
+        <br />
+        <label for="Priority">Priority</label>
+        <select id="Priority" name="Priority">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        <br />
+        <label for="Status">Status</label>
+        <select id="Status" name="Status">
+            <option>Processing</option>
+        </select>
+        <br />
+        <input id="Submit" type="submit" value="送出">
+    </div>
+}

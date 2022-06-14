@@ -3,3 +3,19 @@
 *@
 @{
 }
+@model BugListViewModel
+@using (Html.BeginForm("Edit", "Home", FormMethod.Post))
+{
+    <div class="text-center">
+        <label for="bugID">目前編輯中：</label>
+        <input id="bugID" value=@ViewData["bugID"] name="bugID" type="text" disabled />
+        <br />
+        <label for="Summary">Summary:</label>
+        <input id="Summary" name="Summary" type="text" value=@Model.Summary />
+        <br />
+        <label for="Description">Description:</label>
+        <textarea id="Description" name="Description" cols="30" rows="5" style="vertical-align:top;" >@Model.Description</textarea>
+        <br />
+        <input id="Submit" type="submit" value="送出">
+    </div>
+}
